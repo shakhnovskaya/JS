@@ -23,7 +23,7 @@ let mainList = {
 	shopGoods: [],
 	employers: {},
 	open: false,
-	discount: true
+	discount: false
 }
 
 function chooseGoods(){
@@ -59,9 +59,10 @@ function getDailyBudget() {
 }
 getDailyBudget();
 
-let text = "Цена" ; // НЕ пойму как это корректно записать внутри функции
+ 
 function calcDiscount(){
-	if (mainList.discount === true){
+	let text = "Цена" ;
+	if (mainList.discount){
 		let d = prise / 100 * 80;
 		console.log(text + " со скидкой " + d);
 		} else if(mainList.discount === false){
