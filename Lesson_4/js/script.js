@@ -88,7 +88,9 @@ let mainList = {
 
 	}
 
-}
+};
+
+//mainList.chooseShopItems();
 
 console.log('Наш магазин включает в себя: ');
 
@@ -97,10 +99,12 @@ for (let key in mainList){
 };
 
 
-console.log('у нас вы можете купить');
-shopGoods.forEach(function(item, i, arr)) {
-	console.log(i + item + arr);
-}
+console.log('у нас вы можете купить:');
+
+mainList.shopItems.forEach(function(item, i, arr) {
+		i = i + 1;
+	console.log(i + '-' + item);
+});
 
 
 console.log(mainList);
