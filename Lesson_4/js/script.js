@@ -15,7 +15,7 @@ function start() {
 	 prise = 1000; 
 
 }
-start();
+//start();
 
 let mainList = {
 	budget: money,
@@ -89,5 +89,18 @@ let mainList = {
 	}
 
 }
+
+console.log('Наш магазин включает в себя: ');
+
+for (let key in mainList){
+ 	 console.log('-' + key);
+};
+
+
+console.log('у нас вы можете купить');
+shopGoods.forEach(function(item, i, arr)) {
+	console.log(i + item + arr);
+}
+
 
 console.log(mainList);
