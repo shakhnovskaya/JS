@@ -23,23 +23,24 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-	// что-то я запуталась, как здесь привязать цикл правильно
+	let description_btn = document.getElementsByClassName('description-btn');
 
-	let description_btn = document.getElementsByClassName('description-btn')[0];
+    	for (let i = 0; i < description_btn.length; i++) {
+       	 description_btn[i].addEventListener('click', showModal);
 
-		description_btn.addEventListener('click', function() {
-	 	this.classList.add('more-splash');
-	 	overlay.style.display = "block";
-	 	document.body.style.overflow = 'hidden';
-	 });
+   	 	}
+   	 	
+    function showModal() {
+        this.classList.add('more-splash');
+        overlay.style.display = "block";
+        document.body.style.overflow = 'hidden';
+    };
 
-	 close.addEventListener('click', function() {
+	close.addEventListener('click', function() {
 	 	overlay.style.display = "none";
-	 	more.classList.remove('more-splash');
+	 	this.classList.remove('more-splash');
 	 	document.body.style.overflow = '';
-	 });
-///////////////////////////////////////////////////////////////
-
+	});
 
 	info.addEventListener('click', function(event) {
 		let target = event.target;
@@ -103,11 +104,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
 	let more = document.querySelector('.more');
 	
-	more.addEventListener('click', function() {
-		this.classList.add('more-splash');
-		overlay.style.display = "block";
-		document.body.style.overflow = 'hidden';
-	});
-	
+	more.addEventListener('click', showModal);
+
 	 
 });
