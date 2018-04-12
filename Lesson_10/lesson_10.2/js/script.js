@@ -1,16 +1,18 @@
 class options {
 	constructor(height, width, bg, fontSize, textAlign) {
-		this.height = '200px';
-		this.width = '300px';
-		this.bg = 'green';
-		this.fontSize = '20px';
-		this.textAlign = "center";
+		this.height = height;
+		this.width = width;
+		this.bg = bg;
+		this.fontSize = fontSize;
+		this.textAlign = textAlign;
 
 	}
 	newDiv() {
 		let div = document.createElement('div');
 
-		div.innerHTML = "Hello";
+		setTimeout(function(){
+			div.textContent = prompt('How are you?', '');
+		}, 300);
 
 		div.style.cssText = `height:${this.height}; width:${this.width}; background-color:${this.bg}; font-size:${this.fontSize}; text-align:${this.textAlign};`;
 
@@ -19,6 +21,7 @@ class options {
 	}
 }
 
-let object = new options;
+let object = new options("200px", "300px", 'blue', "20px", "center");
 
 object.newDiv();
+

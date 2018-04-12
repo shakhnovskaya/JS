@@ -1,3 +1,5 @@
+/*jshint esversion: 6 */
+
 window.addEventListener('DOMContentLoaded', function() {
 
 	let tab = document.getElementsByClassName('info-header-tab'),
