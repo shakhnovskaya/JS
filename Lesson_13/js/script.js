@@ -229,30 +229,26 @@ window.addEventListener('DOMContentLoaded', function() {
 			totalValue.innerHTML = 0;
 
 			persons.addEventListener('change', function() {
-				personsSum = +this.value;
+				personsSum = parseInt(this.value);
+				this.value = personsSum;
 				total = (daysSum + personsSum)*4000;
-				if (restDays.value == '') {
+				if (restDays.value == '' || persons.value == '' || persons.value <= 0 || restDays.value <=0) {
 					totalValue.innerHTML = 0;
-				} else if(persons.value < 0) {
-					alert(' Введите корректное значение');
-					totalValue.innerHTML = 0;
-				}
+				} 
 				 else {
-					totalValue.innerHTML = total;
+					totalValue.innerHTML = total * place.options[place.selectedIndex].value;
 				}
 			});
 
 			restDays.addEventListener('change', function() {
-				daysSum = +this.value;
+				daysSum = parseInt(this.value);
+				this.value = daysSum;
 				total = (daysSum + personsSum)*4000;
-				if (persons.value == '') {
+				if (restDays.value == '' || persons.value == '' || persons.value <= 0 || restDays.value <=0) {
 					totalValue.innerHTML = 0;
-				} else if(restDays.value < 0) {
-					alert(' Введите корректное значение');
-					totalValue.innerHTML = 0;
-				}
+				} 
 				 else {
-					totalValue.innerHTML = total;
+					totalValue.innerHTML = total * place.options[place.selectedIndex].value;
 				}
 			});
 
