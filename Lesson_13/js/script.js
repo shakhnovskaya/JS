@@ -233,7 +233,11 @@ window.addEventListener('DOMContentLoaded', function() {
 				total = (daysSum + personsSum)*4000;
 				if (restDays.value == '') {
 					totalValue.innerHTML = 0;
-				} else {
+				} else if(persons.value < 0) {
+					alert(' Введите корректное значение');
+					totalValue.innerHTML = 0;
+				}
+				 else {
 					totalValue.innerHTML = total;
 				}
 			});
@@ -243,7 +247,11 @@ window.addEventListener('DOMContentLoaded', function() {
 				total = (daysSum + personsSum)*4000;
 				if (persons.value == '') {
 					totalValue.innerHTML = 0;
-				} else {
+				} else if(restDays.value < 0) {
+					alert(' Введите корректное значение');
+					totalValue.innerHTML = 0;
+				}
+				 else {
 					totalValue.innerHTML = total;
 				}
 			});
