@@ -1,5 +1,3 @@
-/*jshint esversion: 6 */
-
 window.addEventListener('DOMContentLoaded', function() {
 
 	let tab = document.getElementsByClassName('info-header-tab'),
@@ -15,7 +13,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		}
 	}
 
-	hideTabContent(1)
+	hideTabContent(1);
 
 	function showTabContent(b) {
 		if( tabContent[b].classList.contains('hide')) {
@@ -36,7 +34,7 @@ window.addEventListener('DOMContentLoaded', function() {
         this.classList.add('more-splash');
         overlay.style.display = "block";
         document.body.style.overflow = 'hidden';
-    };
+    }
 
 	close.addEventListener('click', function() {
 	 	overlay.style.display = "none";
@@ -53,7 +51,7 @@ window.addEventListener('DOMContentLoaded', function() {
 					break;
 				}
 			}
-		};
+		}
 
 	});
 
@@ -74,7 +72,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			'minutes': minutes,
 			'seconds': seconds
 		};
-	};
+	}
 
 	function setClock(id, endtime) {
 
@@ -93,12 +91,12 @@ window.addEventListener('DOMContentLoaded', function() {
 					clearInterval(timeInterval);
 				}
 
-			};
+			}
 
 			updateClock();
 			let timeInterval = setInterval(updateClock, 1000);
 
-	};
+	}
 
 	setClock('timer', deadline);
 
@@ -108,5 +106,4 @@ window.addEventListener('DOMContentLoaded', function() {
 	
 	more.addEventListener('click', showModal);
 
-	 
 });
