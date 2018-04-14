@@ -22,6 +22,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			tabContent[b].classList.add('show');
 		}
 	}
+	//Modal
 
 	let description_btn = document.getElementsByClassName('description-btn');
 
@@ -29,6 +30,9 @@ window.addEventListener('DOMContentLoaded', function() {
        	 description_btn[i].addEventListener('click', showModal);
 
    	 	}
+   	let more = document.querySelector('.more');
+	
+	more.addEventListener('click', showModal);
    	 	
     function showModal() {
         this.classList.add('more-splash');
@@ -100,13 +104,7 @@ window.addEventListener('DOMContentLoaded', function() {
 	}
 
 	setClock('timer', deadline);
-
-	//Modal
-
-	let more = document.querySelector('.more');
 	
-	more.addEventListener('click', showModal);
-
 	//Form
 
 	let message = new Object();
@@ -135,10 +133,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			request.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
 			let formData = new FormData(form);
-/*--------------------- 
- вопрос, я так и не догнала), здесь же form это переменная? 
- как тогда для contactForm правильно прописать, через append? как?)
---------------------------------------------------*/
+
 			request.send(formData);
 
 			request.onreadystatechange = function() {
@@ -253,7 +248,7 @@ window.addEventListener('DOMContentLoaded', function() {
 			});
 
 			place.addEventListener('change', function() {
-				if (restDays.value == '' || persons.value == '') {
+				if (restDays.value == '' || persons.value == '' || persons.value <= 0 || restDays.value <=0) {
 					totalValue.innerHTML = 0;
 				} else{
 					let a = total;
