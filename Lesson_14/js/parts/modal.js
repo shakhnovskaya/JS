@@ -1,7 +1,6 @@
 function modal() {
 	let description_btn = document.getElementsByClassName('description-btn'),
-		info = document.getElementsByClassName('info-header')[0],
-		overlay = document.querySelector('.overlay'), 
+		overlay = document.querySelector('.overlay'),
 		close = document.querySelector('.popup-close'); 
 
     	for (let i = 0; i < description_btn.length; i++) {
@@ -20,24 +19,13 @@ function modal() {
     }
 
 	close.addEventListener('click', function() {
-	 	overlay.style.display = "none";
+		overlay.style.display = "none";
 	 	this.classList.remove('more-splash');
 	 	document.body.style.overflow = '';
-	 	statusMessage.remove(); // удалить сообщение
+	 	
 	});
 
-	info.addEventListener('click', function(event) {
-		let target = event.target;
-		if(target.className == 'info-header-tab') {
-			for (let i = 0; i < tab.length; i++) {
-				if(target == tab[i]) {
-					showTabContent(i);
-					break;
-				}
-			}
-		}
-
-	});
+	
 }
 
 module.exports = modal;

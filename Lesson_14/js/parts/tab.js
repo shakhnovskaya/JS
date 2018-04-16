@@ -1,7 +1,7 @@
 function tab() {
 	let tab = document.getElementsByClassName('info-header-tab'),
-		tabContent = document.getElementsByClassName('info-tabcontent');
-		
+		tabContent = document.getElementsByClassName('info-tabcontent'),
+		info = document.getElementsByClassName('info-header')[0];
 
 	function hideTabContent(a) {
 		for (let i = a; i < tabContent.length; i++){
@@ -19,6 +19,19 @@ function tab() {
 			tabContent[b].classList.add('show');
 		}
 	}
+
+	info.addEventListener('click', function(event) {
+		let target = event.target;
+		if(target.className == 'info-header-tab') {
+			for (let i = 0; i < tab.length; i++) {
+				if(target == tab[i]) {
+					showTabContent(i);
+					break;
+				}
+			}
+		}
+
+	});
 }
 
 module.exports = tab;
