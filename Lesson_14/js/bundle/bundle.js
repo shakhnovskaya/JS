@@ -15,10 +15,12 @@ window.addEventListener('DOMContentLoaded', function() {
 	calc();
 	timer();
 	
+
+
 });
 },{"../parts/ajax.js":2,"../parts/calc.js":3,"../parts/modal.js":4,"../parts/slider.js":5,"../parts/tab.js":6,"../parts/timer.js":7}],2:[function(require,module,exports){
 function ajax() {
-		let message = new Object();
+	let message = new Object();
 	message.loading = "Загрузка...";
 	message.success = "Спасибо! Скоро мы с вами свяжемся";
 	message.failure = "Что-то пошло не так...";
@@ -70,7 +72,7 @@ function ajax() {
 module.exports = ajax;
 },{}],3:[function(require,module,exports){
 function calc() {
-			let persons = document.getElementsByClassName('counter-block-input')[0],
+	let persons = document.getElementsByClassName('counter-block-input')[0],
 			restDays = document.getElementsByClassName('counter-block-input')[1],
 			place = document.getElementById('select'),
 			totalValue = document.getElementById('total'),
@@ -117,12 +119,16 @@ function calc() {
 module.exports = calc;
 },{}],4:[function(require,module,exports){
 function modal() {
-		let description_btn = document.getElementsByClassName('description-btn');
+	let description_btn = document.getElementsByClassName('description-btn'),
+		info = document.getElementsByClassName('info-header')[0],
+		overlay = document.querySelector('.overlay'), 
+		close = document.querySelector('.popup-close'); 
 
     	for (let i = 0; i < description_btn.length; i++) {
        	 description_btn[i].addEventListener('click', showModal);
 
    	 	}
+
    	let more = document.querySelector('.more');
 	
 	more.addEventListener('click', showModal);
@@ -137,7 +143,7 @@ function modal() {
 	 	overlay.style.display = "none";
 	 	this.classList.remove('more-splash');
 	 	document.body.style.overflow = '';
-	 	statusMessage.remove();
+	 	statusMessage.remove(); // удалить сообщение
 	});
 
 	info.addEventListener('click', function(event) {
@@ -157,7 +163,7 @@ function modal() {
 module.exports = modal;
 },{}],5:[function(require,module,exports){
 function slider() {
-			let sllideIndex = 1,
+	let sllideIndex = 1,
 		slides = document.getElementsByClassName('slider-item'),
 		prev = document.querySelector('.prev'),
 		next = document.querySelector('.next'),
@@ -210,17 +216,14 @@ function slider() {
 				}
 			}
 		});
-
 }
 
 module.exports = slider;
 },{}],6:[function(require,module,exports){
 function tab() {
-		let tab = document.getElementsByClassName('info-header-tab'),
-		tabContent = document.getElementsByClassName('info-tabcontent'),
-		info = document.getElementsByClassName('info-header')[0],
-		overlay = document.querySelector('.overlay'),
-		close = document.querySelector('.popup-close');
+	let tab = document.getElementsByClassName('info-header-tab'),
+		tabContent = document.getElementsByClassName('info-tabcontent');
+		
 
 	function hideTabContent(a) {
 		for (let i = a; i < tabContent.length; i++){

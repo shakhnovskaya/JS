@@ -1,10 +1,14 @@
 function modal() {
-		let description_btn = document.getElementsByClassName('description-btn');
+	let description_btn = document.getElementsByClassName('description-btn'),
+		info = document.getElementsByClassName('info-header')[0],
+		overlay = document.querySelector('.overlay'), 
+		close = document.querySelector('.popup-close'); 
 
     	for (let i = 0; i < description_btn.length; i++) {
        	 description_btn[i].addEventListener('click', showModal);
 
    	 	}
+
    	let more = document.querySelector('.more');
 	
 	more.addEventListener('click', showModal);
@@ -19,7 +23,7 @@ function modal() {
 	 	overlay.style.display = "none";
 	 	this.classList.remove('more-splash');
 	 	document.body.style.overflow = '';
-	 	statusMessage.remove();
+	 	statusMessage.remove(); // удалить сообщение
 	});
 
 	info.addEventListener('click', function(event) {

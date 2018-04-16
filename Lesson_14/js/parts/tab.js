@@ -1,9 +1,7 @@
 function tab() {
-		let tab = document.getElementsByClassName('info-header-tab'),
-		tabContent = document.getElementsByClassName('info-tabcontent'),
-		info = document.getElementsByClassName('info-header')[0],
-		overlay = document.querySelector('.overlay'),
-		close = document.querySelector('.popup-close');
+	let tab = document.getElementsByClassName('info-header-tab'),
+		tabContent = document.getElementsByClassName('info-tabcontent');
+		
 
 	function hideTabContent(a) {
 		for (let i = a; i < tabContent.length; i++){

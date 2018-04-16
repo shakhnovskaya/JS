@@ -1,5 +1,5 @@
 function ajax() {
-		let message = new Object();
+	let message = new Object();
 	message.loading = "Загрузка...";
 	message.success = "Спасибо! Скоро мы с вами свяжемся";
 	message.failure = "Что-то пошло не так...";

@@ -1,5 +1,5 @@
 function slider() {
-			let sllideIndex = 1,
+	let sllideIndex = 1,
 		slides = document.getElementsByClassName('slider-item'),
 		prev = document.querySelector('.prev'),
 		next = document.querySelector('.next'),
@@ -52,7 +52,6 @@ function slider() {
 				}
 			}
 		});
-
 }
 
 module.exports = slider;
