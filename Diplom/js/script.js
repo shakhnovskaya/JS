@@ -6,29 +6,17 @@ window.addEventListener('DOMContentLoaded', function() {
 		popupBtn = document.getElementById('popup-btn'),
 		main = document.querySelector('.main'),
 		custom = document.querySelector('.custom'),
-		customInfo = document.getElementsByClassName('custom-info'),
-		customChar = document.getElementsByClassName('custom-char'),
-		customStyle = document.getElementsByClassName('custom-style');
-
-
-
-		function showModal() {
-	        overlay.style.display = "block";
-	        popup.style.display = "block";
-	        main.style.display = "block";
-	        custom.style.display = "none";
-	        
-	      
-    }
+		customInfo = document.querySelector('.custom-info'),
+		customChar = document.querySelector('.custom-char'),
+		customStyle = document.querySelector('.custom-style');
 
 	popupBtn.addEventListener('click', function() {
 	 	overlay.style.display = "none";
-	 	popup.style.display = "none";
-	 	main.style.display = "none";
+	  	main.style.display = "none";
 	 	custom.style.display = "flex";
-	 	customInfo.style.display = "inline-block";
-	 	customChar.style.display = "inline-block";
-	 	customStyle.style.display = "inline-block";
+	 	customInfo.style.display = "block";
+	 	customChar.style.display = "block";
+	 	customStyle.style.display = "block";
 	 		 	
 	});
 
