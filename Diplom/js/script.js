@@ -42,58 +42,53 @@ window.addEventListener('DOMContentLoaded', function() {
 			views = document.getElementsByClassName('views'),
 			bio = document.getElementsByClassName('bio');
 
-		let nameNew = document.getElementById('name'),
-			ageNew = document.getElementById('age'),
-			sexNew = document.getElementById('sex'),
-			viewsNew = document.getElementById('views'),
-			bioNew = document.getElementById('bio');
-
-
+		let name_value = document.getElementById('name'),
+			age_value = document.getElementById('age'),
+			sex_value = document.getElementById('sex'),
+			views_value = document.getElementById('views'),
+			bio_value = document.getElementById('bio');
 
 
 		let mainCardsItemNew = document.createElement('div');
-			mainCardsItemNew.classList.add('main-cards-item');
+			name = document.createElement('div');
+			age = document.createElement('div');
+			sex = document.createElement('div');
+			views = document.createElement('div');
+			bio = document.createElement('div');
+
+
 			mainCards.appendChild(mainCardsItemNew);
+			mainCardsItemNew.appendChild(name);
+			mainCardsItemNew.appendChild(age);
+			mainCardsItemNew.appendChild(sex);
+			mainCardsItemNew.appendChild(views);
+			mainCardsItemNew.appendChild(bio);
+	 
+			mainCardsItemNew.classList.add('main-cards-item');
+			name.classList.add('name');
+			age.classList.add('age');
+			sex.classList.add('sex');
+			views.classList.add('views');
+			bio.classList.add('bio');
 
-		let	nameNew = document.createElement('div');
-			nameNew.classList.add('name');
-
-
-		nameNew.addEventListener('change', () => {
-
-			let name_value = nameNew.value;
-			name_value.textContent = mainCardsItemNew.name;
-
- 
-	});
-
-
-
+			
+			name_value.addEventListener('change', () => {
+			
+				name_value = name_value.value; 
+				name_value.textContent = mainCardsItemNew.name;
+				console.log(name_value);
 		
 
-			// age = document.createElement('div'),
-			// sex = document.createElement('div'),
-			// views = document.createElement('div'),
-			// bio = document.createElement('div');
+	
 
-			
-			// age.classList.add('age');
-			// sex.classList.add('sex');
-			// views.classList.add('views');
-			// bio.classList.add('bio');
-
-		//let name_value = document.getElementById('name');
-			
+ 	
+		});
+		
 
 
-	// name.textContent = name_value.value;
-
-	 
 	});
 
 
-
-	
 
 
 });
